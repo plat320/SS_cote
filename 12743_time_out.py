@@ -30,23 +30,17 @@ if __name__ == '__main__':
         N, K = map(int, input().split(" "))
         my_list = list(input())[::-1]
         my_list = [1 if val == "B" else -1 for val in my_list]
-        idx_list = []
-
-        default_idx = 0
 
         summation = 0
         prev_val = 0
+        result = 0
         for idx, val in enumerate(my_list):
             summation = 0 if summation + val < 0 else summation + val
 
             if summation == K + 1:
                 summation = K - 1
                 my_list[idx] = -1
-                idx_list.append(idx)
-
-        result = 0
-        for idx in idx_list:
-            result += 2 ** (len(my_list) - idx)
+                result += 2 ** (N - idx)
 
         print("#{} {}".format(test_idx, result % 998244353))
 
