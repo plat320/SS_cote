@@ -24,7 +24,7 @@ def fish_moving(num_list, fish_dict):
             elif pose[0] == fish_dict[0][1][0] and pose[1] == fish_dict[0][1][1]:       # 상어랑 확인
                 dir += 1
                 dir = 1 if dir == 9 else dir
-            elif not num_list[pose[0]][pose[1]]:                                        # 물고기 없는 위치
+            elif not num_list[pose[0]][pose[1]]:
                 dir += 1
                 dir = 1 if dir == 9 else dir
             else:                                                                       # 물고기 이동 가능 ㅠ
